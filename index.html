@@ -7,35 +7,44 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
 </head>
 <body>
-<h1>Consumer Price Index vs. Political Affiliation of Presidents Starting in 1980</h1>
+<h1>Consumer Price Index vs. Political Affiliation of Presidents Starting in 1981</h1>
 <hr>
 <h2>Hypothesis: Consumer Price Index will be higher when a democratic president is in power.</h2>
 <div id="vis"></div>
-
 <script type="text/javascript">
     var yourVlSpec = {
         $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
         description: 'A simple bar chart with embedded data.',
-        data: {
-            values: [
-                {x: 'A', y: 28},
-                {x: 'B', y: 55},
-                {x: 'C', y: 43},
-                {x: 'D', y: 91},
-                {x: 'E', y: 81},
-                {x: 'F', y: 53},
-                {x: 'G', y: 19},
-                {x: 'H', y: 87},
-                {x: 'I', y: 52}
-            ]
-        },
-        mark: 'bar',
+        data: {url: "CPITermAvg.csv"},
+        mark: "bar",
         encoding: {
-            x: {field: 'Presidential Term and Party Affiliation', type: 'ordinal'},
-            y: {field: 'Average percent change in CPI', type: 'quantitative'}
+            x: {"field": "Term"},
+            y: {"field": "4 Year Avg", "type": "quantitative"},
+            color: {"field": "Party", "scale": {"range": ["#0000FF", "#FF0000"]}}
         }
     };
     vegaEmbed('#vis', yourVlSpec);
 </script>
+<div id="vis2"></div>
+<script type="text/javascript">
+    var yourVlSpec2 = {
+        $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+        description: 'A simple bar chart with embedded data.',
+        data: {url: "CPI.csv"},
+        mark: "point",
+        encoding: {
+            x: {"field": "Year"},
+            y: {"field": "Annual", "type": "quantitative"},
+            color: {"field": "Party", "scale": {"range": ["#0000FF", "#FF0000"]}}
+        }
+    };
+    vegaEmbed('#vis2', yourVlSpec2);
+</script>
+<hr>
+<h3>Conclusion: The data seems to show that CPI tends to increase more when Republicans are in control of the White House</h3>
+<p>There are a lot of things to consider when looking at CPI as not all presidents enforce the same policies even within the same party.<br>
+This is why I choose to show both president CPI term averages with a histogram and a blanket scatter plot of CPI percent increases year by year<br>
+with color indicating party.</p>
+<p>Source: https://www.bls.gov/</p>
 </body>
 </html>
