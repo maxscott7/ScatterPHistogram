@@ -7,9 +7,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
 </head>
 <body>
-<h1>Consumer Price Index vs. Political Affiliation of Presidents Starting in 1981</h1>
+<h1>Consumer Price Index (CPI) vs. Political Affiliation of Presidents Starting in 1981</h1>
 <hr>
 <h2>Hypothesis: Consumer Price Index will be higher when a democratic president is in power.</h2>
+<p>Histogram of each presidential term vs the term average % change in CPI</p>
 <div id="vis"></div>
 <script type="text/javascript">
     var yourVlSpec = {
@@ -27,6 +28,7 @@
 </script>
 <br>
 <hr>
+<p>Scatter plot of % change in CPI by year and political party in the white house</p>
 <div id="vis2"></div>
 <script type="text/javascript">
     var yourVlSpec2 = {
@@ -43,7 +45,8 @@
     vegaEmbed('#vis2', yourVlSpec2);
 </script>
 <hr>
-<h3>Conclusion: The data seems to show that CPI tends to increase more when Republicans are in control of the White House</h3>
+<h3>Conclusion: The data seems to show that CPI tends to increase more when Republicans are in control of the White House<br>
+which disproves my hypothesis.</h3>
 <p>There are a lot of things to consider when looking at CPI as not all presidents enforce the same policies even within the same party.<br>
 This is why I choose to show both president CPI term averages with a histogram and a blanket scatter plot of CPI percent increases year by year<br>
 with color indicating party.</p>
@@ -51,6 +54,13 @@ with color indicating party.</p>
 <p>One problem I encountered was getting the data to scale properly to accurately represent changes in CPI<br>
 for each year and presidential term.  Inflation is a hotly debated topic in todays political climate with a <br>
 Democratic president so especially now, giving a fair view of historic CPI changes was important.</p>
+<br>
+<p>In class we learned the importance of making graphs easy to understand and knowing who the target audience is.<br>
+I definetely want my target audience to be the common everyday citizen so I thought it was important it was simple to understand <br>
+with no background information.  I think if I were to add more data it would be interesting to see the CPI changes <br>
+along with what political parties controll the house and senate as obviously the president is not the end all for<br>
+policy creation in the United States.</p>
+<br>
 <p>Source: https://www.bls.gov/</p>
 </body>
 </html>
